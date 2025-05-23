@@ -32,4 +32,4 @@ ENV PYTHONPATH=/app
 EXPOSE 8080
 
 # Set the default command to run the ADK API server
-CMD ["adk", "api_server", "browser_agent.agent", "--host", "0.0.0.0", "--port", "8080"]
+CMD ["adk", "api_server", "browser_agent", "--host", "0.0.0.0", "--port", "8080"]
