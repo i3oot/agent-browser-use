@@ -19,13 +19,14 @@ COPY requirements.txt /app/requirements.txt
 RUN pip install --no-cache-dir -r /app/requirements.txt
 
 # Copy the rest of the application files
+# This will include the browser_agent directory and .env file
 COPY . /app
 
 # Set working directory
 WORKDIR /app
 
-# Expose the port your application runs on (if applicable)
-EXPOSE 5000
+# Expose the port the ADK server will run on
+EXPOSE 8080
 
-# Set the default command to run your application
-CMD ["python", "server.py"]
+# Set the default command to run the ADK API server
+CMD ["adk", "api_server", "browser_agent.agent", "--host", "0.0.0.0", "--port", "8080"]
