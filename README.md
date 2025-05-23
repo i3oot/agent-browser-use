@@ -71,6 +71,7 @@ This agent communicates using the Agent-to-Agent (A2A) protocol. A2A-compatible 
 
 The primary tool exposed by this agent is `web_browser_tool`. To use it, an A2A client would send a request to invoke this tool with a `task` parameter describing the web browsing objective.
 
+
 For example, a JSON-RPC request might look like (this is a conceptual example):
 ```json
 {

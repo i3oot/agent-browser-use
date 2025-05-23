@@ -1,3 +1,4 @@
 browser-use
 google-adk
 a2a-sdk
+litellm
