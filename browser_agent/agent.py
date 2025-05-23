@@ -6,6 +6,18 @@ from langchain_openai import ChatOpenAI
 from browser_use import Agent as BrowserUseAgent, Browser, BrowserConfig
 from google.adk.agents import Agent as AdkAgent
 from google.adk.tools import LongRunningFunctionTool
+from google.a2a import AgentCard, AgentSkill, A2AServer
+
+card = AgentCard(
+    name="browser_navigation_agent",
+    url=os.getenv("SERVICE_URL"),
+    skills=[
+        AgentSkill(id="browse",name="browse",description="browse the internet")
+    ]
+)
+    
+
+
 
 # Global browser instance
 browser = Browser(config=BrowserConfig(headless=True))
