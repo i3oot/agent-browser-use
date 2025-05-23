@@ -25,6 +25,9 @@ COPY . /app
 # Set working directory
 WORKDIR /app
 
+# Add /app to PYTHONPATH to ensure agent module is found
+ENV PYTHONPATH=/app
+
 # Expose the port the ADK server will run on
 EXPOSE 8080
 
