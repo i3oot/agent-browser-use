@@ -24,8 +24,12 @@ COPY . /app
 # Set working directory
 WORKDIR /app
 
-# Expose the port your application runs on (if applicable)
-EXPOSE 5000
+# Define default port and set PORT environment variable
+ARG DEFAULT_PORT=8000
+ENV PORT=${DEFAULT_PORT}
+
+# Expose the port the application runs on
+EXPOSE ${PORT}
 
 # Set the default command to run your application
 CMD ["python", "server.py"]

@@ -1,14 +1,20 @@
 version: "3.9"
 
+# volumes: (Removed as mosquitto_data and mosquitto_log are no longer needed)
+
 services:
-  app:
+  browser_agent:
     build:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - .:/app
+      - .:/app # Mounts current directory to /app in container for development
     working_dir: /app
-    command: uvicorn test:app --host 0.0.0.0 --port 5000
+    command: python server.py
+    environment:
+      - APP_ID=browser_agent_app_default # Matches default in server.py
+      - PORT=8000 # Sets the port inside the container
     ports:
-      - "5055:5000"
+      - "8000:8000" # Maps host port 8000 to container port 8000
     restart: always
+# Removed mosquitto service

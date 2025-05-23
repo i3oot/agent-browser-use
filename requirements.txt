@@ -1,3 +1,2 @@
 browser-use
-fastapi
-uvicorn
+fastmcp
